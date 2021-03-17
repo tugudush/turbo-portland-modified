@@ -1,0 +1,24 @@
+@mixin font-size($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {  
+
+  @media (min-width: 1025px) {
+    font-size: responsive-size($size, $target-screen-width);
+    @if $important {
+      font-size: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: $tablet-size;
+    @if $important {
+      font-size: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (max-width: 767px) {
+    font-size: $mobile-size;
+    @if $important {
+      font-size: $mobile-size !important;
+    }
+  }
+
+} // end of @mixin font-size

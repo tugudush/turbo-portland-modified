@@ -1,0 +1,743 @@
+
+@function responsive-size($size, $target-screen-width: $screen-width-2) {  
+  @return $size / $target-screen-width * 100 + vw;  
+} /* end of @function responsive-size($size, $target-screen-width: $screen-width-1) */
+
+@mixin width($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: $tablet-size;
+    @if $important {
+      width: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+
+  @media (min-width: 1025px) {
+    width: responsive-size($size, $target-screen-width);
+    @if $important {
+      width: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    width: $mobile-size;
+    @if $important {
+      width: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin width
+
+@mixin width-2($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: $tablet-size;
+    @if $important {
+      width: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+
+  @media (min-width: 1025px) {
+    width: $size;
+    @if $important {
+      width: $size !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    width: $mobile-size;
+    @if $important {
+      width: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin width-2
+
+@mixin max-width($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    max-width: $tablet-size;
+    @if $important {
+      max-width: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    max-width: responsive-size($size, $target-screen-width);
+    @if $important {
+      max-width: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    max-width: $mobile-size;
+    @if $important {
+      max-width: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin max-width
+
+@mixin height($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    height: $tablet-size;
+    @if $important {
+      height: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    height: responsive-size($size, $target-screen-width);
+    @if $important {
+      height: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    height: $mobile-size;
+    @if $important {
+      height: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin height
+
+@mixin min-height($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    min-height: $tablet-size;
+    @if $important {
+      min-height: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    min-height: responsive-size($size, $target-screen-width);
+    @if $important {
+      min-height: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    min-height: $mobile-size;
+    @if $important {
+      min-height: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin min-height
+
+@mixin max-height($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    max-height: $tablet-size;
+    @if $important {
+      max-height: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    max-height: responsive-size($size, $target-screen-width);
+    @if $important {
+      max-height: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    max-height: $mobile-size;
+    @if $important {
+      max-height: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin min-height
+
+@mixin line-height($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    line-height: $tablet-size;
+    @if $important {
+      line-height: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    line-height: responsive-size($size, $target-screen-width);
+    @if $important {
+      line-height: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    line-height: $mobile-size;
+    @if $important {
+      line-height: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin line-height
+
+@mixin margin-uniform($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin: $tablet-size;
+    @if $important {
+      margin: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    margin: responsive-size($size, $target-screen-width);
+    @if $important {
+      margin: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    margin: $mobile-size;
+    @if $important {
+      margin: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin margin
+
+@mixin margin-horizontal($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-left: $tablet-size;
+    margin-right: $tablet-size;
+    @if $important {
+      margin-left: $tablet-size !important;
+      margin-right: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    margin-left: responsive-size($size, $target-screen-width);
+    margin-right: responsive-size($size, $target-screen-width);
+    @if $important {
+      margin-left: responsive-size($size, $target-screen-width) !important;
+      margin-right: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    margin-left: $mobile-size;
+    margin-right: $mobile-size;
+    @if $important {
+      margin-left: $mobile-size !important;
+      margin-right: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin margin-horizontal
+
+@mixin margin-vertical($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-top: $tablet-size;
+    margin-bottom: $tablet-size;
+    @if $important {
+      margin-top: $tablet-size !important;
+      margin-bottom: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    margin-top: responsive-size($size, $target-screen-width);
+    margin-bottom: responsive-size($size, $target-screen-width);
+    @if $important {
+      margin-top: responsive-size($size, $target-screen-width) !important;
+      margin-bottom: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    margin-top: $mobile-size;
+    margin-bottom: $mobile-size;
+    @if $important {
+      margin-top: $mobile-size !important;
+      margin-bottom: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin margin-vertical
+
+@mixin margin-top($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-top: $tablet-size;
+    @if $important {
+      margin-top: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    margin-top: responsive-size($size, $target-screen-width);
+    @if $important {
+      margin-top: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    margin-top: $mobile-size;
+    @if $important {
+      margin-top: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin margin-top
+
+@mixin margin-bottom($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-bottom: $tablet-size;
+    @if $important {
+      margin-bottom: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    margin-bottom: responsive-size($size, $target-screen-width);
+    @if $important {
+      margin-bottom: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    margin-bottom: $mobile-size;
+    @if $important {
+      margin-bottom: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin margin-bottom
+
+@mixin margin-left($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-left: $tablet-size;
+    @if $important {
+      margin-left: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    margin-left: responsive-size($size, $target-screen-width);
+    @if $important {
+      margin-left: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    margin-left: $mobile-size;
+    @if $important {
+      margin-left: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin margin-left
+
+@mixin margin-right($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-right: $tablet-size;
+    @if $important {
+      margin-right: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    margin-right: responsive-size($size, $target-screen-width);
+    @if $important {
+      margin-right: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    margin-right: $mobile-size;
+    @if $important {
+      margin-right: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin margin-right
+
+@mixin padding-uniform($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: $tablet-size;
+    @if $important {
+      padding: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    padding: responsive-size($size, $target-screen-width);
+    @if $important {
+      padding: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    padding: $mobile-size;
+    @if $important {
+      padding: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin padding-uniform
+
+@mixin padding-vertical($size, $tablet-size: $size, $mobile-size: $size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-top: $tablet-size;
+    padding-bottom: $tablet-size;
+    @if $important {
+      padding-top: $tablet-size !important;
+      padding-bottom: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    padding-top: responsive-size($size, $target-screen-width);
+    padding-bottom: responsive-size($size, $target-screen-width);
+    @if $important {
+      padding-top: responsive-size($size, $target-screen-width) !important;
+      padding-bottom: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    padding-top: $mobile-size !important;
+    padding-bottom: $mobile-size !important;
+    @if $important {
+      padding-top: $mobile-size !important;
+      padding-bottom: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin padding-vertical
+
+@mixin padding-horizontal($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-left: $tablet-size;
+    padding-right: $tablet-size;
+    @if $important {
+      padding-left: $tablet-size !important;
+      padding-right: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    padding-left: responsive-size($size, $target-screen-width);
+    padding-right: responsive-size($size, $target-screen-width);
+    @if $important {
+      padding-left: responsive-size($size, $target-screen-width) !important;
+      padding-right: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    padding-left: $mobile-size !important;
+    padding-right: $mobile-size !important;
+    @if $important {
+      padding-left: $mobile-size !important;
+      padding-right: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin padding-horizontal
+
+@mixin padding-top($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-top: $tablet-size;
+    @if $important {
+      padding-top: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    padding-top: responsive-size($size, $target-screen-width);
+    @if $important {
+      padding-top: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    padding-top: $mobile-size;
+    @if $important {
+      padding-top: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin padding-top
+
+@mixin padding-bottom($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-bottom: $tablet-size;
+    @if $important {
+      padding-bottom: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    padding-bottom: responsive-size($size, $target-screen-width);
+    @if $important {
+      padding-bottom: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    padding-bottom: $mobile-size;
+    @if $important {
+      padding-bottom: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin padding-bottom
+
+@mixin padding-left($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-left: $tablet-size;
+    @if $important {
+      padding-left: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    padding-left: responsive-size($size, $target-screen-width);
+    @if $important {
+      padding-left: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    padding-left: $mobile-size;
+    @if $important {
+      padding-left: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin padding-left
+
+@mixin padding-right($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding-right: $tablet-size;
+    @if $important {
+      padding-right: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    padding-right: responsive-size($size, $target-screen-width);
+    @if $important {
+      padding-right: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    padding-right: $mobile-size;
+    @if $important {
+      padding-right: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin padding-right
+
+@mixin top($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    top: $tablet-size;
+    @if $important {
+      top: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    top: responsive-size($size, $target-screen-width);
+    @if $important {
+      top: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    top: $mobile-size;
+    @if $important {
+      top: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin top
+
+@mixin bottom($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    bottom: $tablet-size;
+    @if $important {
+      bottom: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    bottom: responsive-size($size, $target-screen-width);
+    @if $important {
+      bottom: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    bottom: $mobile-size;
+    @if $important {
+      bottom: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin bottom
+
+@mixin left($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    left: $tablet-size;
+    @if $important {
+      left: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    left: responsive-size($size, $target-screen-width);
+    @if $important {
+      left: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    left: $mobile-size;
+    @if $important {
+      left: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin left
+
+@mixin right($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    right: $tablet-size;
+    @if $important {
+      right: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    right: responsive-size($size, $target-screen-width);
+    @if $important {
+      right: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    right: $mobile-size;
+    @if $important {
+      right: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin right
+
+@mixin border($size, $style, $color, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (max-width: 1024px) {
+    border: $size $style $color;
+    @if $important {
+      border: $size $style $color !important;
+    }
+  } // end of @media (max-width: 1024px)
+  
+  @media (min-width: 1025px) {
+    border: responsive-size($size, $target-screen-width) $style $color;
+    @if $important {
+      border: responsive-size($size, $target-screen-width) $style $color !important;
+    }
+  } // end of @media (min-width: 1025px)  
+
+} // end of @mixin border
+
+@mixin border-top($size, $style, $color, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 1025px) {
+    border-top: responsive-size($size, $target-screen-width) $style $color;
+    @if $important {
+      border-top: responsive-size($size, $target-screen-width) $style $color !important;
+    }
+  } // end of @media (min-width: 1025px)
+
+  @media (max-width: 1024px) {
+    border-top: $size $style $color;
+    @if $important {
+      border-top: $size $style $color !important;
+    }
+  } // end of @media (max-width: 1024px)  
+
+} // end of @mixin borderl-top
+
+@mixin border-bottom($size, $style, $color, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 1025px) {
+    border-bottom: responsive-size($size, $target-screen-width) $style $color;
+    @if $important {
+      border-bottom: responsive-size($size, $target-screen-width) $style $color !important;
+    }
+  } // end of @media (min-width: 1025px)
+
+  @media (max-width: 1024px) {
+    border-bottom: $size $style $color;
+    @if $important {
+      border-bottom: $size $style $color !important;
+    }
+  } // end of @media (max-width: 1024px)  
+
+} // end of @mixin borderl-bottom
+
+@mixin border-left($size, $style, $color, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 1025px) {
+    border-left: responsive-size($size, $target-screen-width) $style $color;
+    @if $important {
+      border-left: responsive-size($size, $target-screen-width) $style $color !important;
+    }
+  } // end of @media (min-width: 1025px)
+
+  @media (max-width: 1024px) {
+    border-left: $size $style $color;
+    @if $important {
+      border-left: $size $style $color !important;
+    }
+  } // end of @media (max-width: 1024px)  
+
+} // end of @mixin borderl-left
+
+@mixin border-right($size, $style, $color, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 1025px) {
+    border-right: responsive-size($size, $target-screen-width) $style $color;
+    @if $important {
+      border-right: responsive-size($size, $target-screen-width) $style $color !important;
+    }
+  } // end of @media (min-width: 1025px)
+
+  @media (max-width: 1024px) {
+    border-right: $size $style $color;
+    @if $important {
+      border-right: $size $style $color !important;
+    }
+  } // end of @media (max-width: 1024px)  
+
+} // end of @mixin border-right
