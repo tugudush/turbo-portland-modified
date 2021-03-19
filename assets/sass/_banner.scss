@@ -1,0 +1,181 @@
+.banner {
+
+  // background-color: #fff;
+
+  @media (min-width: 1025px) {
+    &.home-banner-1 {
+      //height: responsive-size(852px);
+    }
+    
+  } // end of @media (min-width: 769px)
+
+  @media (min-width: 768px) {
+    &.home-banner-2 {
+      height: responsive-size(860px);
+    }
+  } // end of @media (min-width: 768px)  
+
+  .wrap {    
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    
+    &#home-banner-1-wrap {
+      background-size: 42.2%;
+      background-position: right 50px;
+    } // end of &#home-banner-1-wrap    
+
+    &#home-banner-2-wrap {
+      background-size: 27.52%;
+      background-position: 16.10% 47px;
+
+      @media (max-width: 767px) {
+        background-position: left bottom;
+      } // end of @media (max-width: 767px)
+
+      background-color: #E4A935;
+      position: relative;
+
+      .zigzag {
+       
+        @include display(block, block, none);
+
+        position: absolute;
+        @include width(711px, responsive-size(711px));
+
+        &.zigzag-1 {
+          left: auto;
+          right: 0;
+          @include margin-right(-205px, responsive-size(-205px));
+          @include margin-top(55px, responsive-size(55px));
+        } // end of &.zigzag-1
+
+        &.zigzag-2 {
+          right: auto;
+          top: auto;
+          bottom: 0;
+          @include margin-left(-205px, responsive-size(-205px));
+          @include margin-bottom(55px, responsive-size(55px));
+        } // end of  &.zigzag-2
+
+      } // end of .zigzag
+
+    } // end of &#home-banner-2-wrap
+
+    .container {
+
+      padding-top: 0;
+      padding-bottom: 0;
+      @include max-width(1200px, 100%);
+      height: 100%;
+
+      &#home-banner-1-container {
+        padding-bottom: 40px;
+      }
+
+      &#home-banner-2-container {
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 20px;
+      } // end of &#home-banner-2-container
+
+      .content {        
+        @include width-2(51%, 58%, 100%);
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &#home-banner-2-content {          
+
+          &, h2, a {
+            color: #fff;
+          }
+
+          p {
+            @include font-size(40px, responsive-size(40px), 20px);
+          }
+
+        } // end of &#home-banner-2-content
+
+        
+        #home-banner-1-img {
+          display: block;
+          margin: 0 auto;
+          @media (max-width: 767px) {
+            margin-left: -50px;
+          } // end of @media (max-width: 767px)
+          @include width(371px, 290px);
+          height: auto;          
+        } // end of #home-banner-01-img
+
+        h2 {          
+          margin: 0;
+
+          &#home-banner-1-heading {
+            @include margin-top(-40px);
+            @include font-size(56px, 28px);          
+          } // end of  &#home-banner-heading
+          
+          &#home-banner-2-heading {
+            @include font-size(85px, responsive-size(85px), 50px);
+            font-weight: 700;
+          } // end of &#home-banner-2-heading
+
+          @media (max-width: 767px) {
+            text-shadow: 1px 1px 1px #fff;
+          }          
+
+        } // end of h2
+
+        .highlight-outline {
+          display: block;
+          @include font-size(98px, 60px);
+          font-weight: 800;
+          transform: rotate(-5deg);
+
+          @media (min-width: 768px) {
+            -webkit-text-stroke: responsive-size(5px) #B72C9D;
+          } // end of @media (min-width: 768px)
+
+          //  @include margin-top(30px);
+          //  @include margin-bottom(44px);
+          @include margin-top(50px);
+          margin-bottom: 44px;
+
+        } // end of .highlight-outline
+
+        .btn {
+          display: table;
+          font-weight: 700;
+          line-height: 1;
+          margin: 0 auto;
+
+          &#home-banner-1-btn {            
+            @include font-size(32px, 22px, 16px);
+            color: #fff;
+            background-color: #A3298F;
+            border: 2px solid #000;
+            @include padding-vertical(26px);
+            @include padding-horizontal(40px);
+            margin-top: 30px;
+          } // end of &#home-banner-1-btn
+
+          &#home-banner-2-btn {
+            @include font-size(40px, responsive-size(40px), 16px);            
+            border: 2px solid #fff;
+            @include padding-vertical(26px);
+            @include padding-horizontal(40px);
+            margin-top: 30px;
+          } // end of &#home-banner-2-btn
+
+        } // end of .btn
+
+      } // end of .content      
+
+    } // end of .container
+
+  } // end of .wrap
+
+} // end of .banner
