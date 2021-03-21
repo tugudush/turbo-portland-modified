@@ -32,6 +32,8 @@
     {{ 'app.css' | asset_url | stylesheet_tag }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
 
+    <script src="https://kit.fontawesome.com/0d770ce7c4.js" crossorigin="anonymous"></script>
+
     <script>
       window.lazySizesConfig = window.lazySizesConfig || {};
 
@@ -181,7 +183,11 @@
       {% section 'newsletter' %}
     {% endunless %}
 
+    {%comment %}
     {% section 'footer' %}
+    {%endcomment%}
+
+    {% section 'footer-custom' %}
 
     {% if settings.size_chart != blank and template contains 'product' %}
       {% render 'popup-size-chart' %}

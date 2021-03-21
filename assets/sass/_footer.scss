@@ -1,0 +1,30 @@
+#footer {
+  color: #fff;
+  background-color: #444444;
+
+  .container {
+    
+    h2 {
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      @include font-size(50px, responsive-size(50px), 36px);
+    }
+
+    .social-links {
+      &, a {
+        color: #fff;
+      }
+
+      text-align: center;
+
+      [class^="fa"] {
+        display: inline-block;
+        @include font-size(27px, responsive-size(27px), 22px);
+        margin: 0 5px;
+      } // end of [class^="fa"]
+    } // end of .social-links
+
+  } // end of .container
+
+} // end of #footer
