@@ -13,6 +13,10 @@
     &.home-banner-2 {
       height: responsive-size(860px);
     }
+
+    &.home-banner-3 {
+      height: responsive-size(1000px);
+    }
   } // end of @media (min-width: 768px)  
 
   .wrap {    
@@ -62,6 +66,21 @@
 
     } // end of &#home-banner-2-wrap
 
+    &#home-banner-3-wrap {
+      background-color: #B13A1A;
+      background-size: 50.157%;
+      
+      //@media (min-width: 768px) {
+      background-position: calc(100% - 60px) bottom;
+      //} // end of @media (min-width: 768px)
+
+      @media (max-width: 767px) and (orientation: portrait) {
+        background-position: left bottom;
+      } // end of @media (max-width: 767px)
+
+
+    } // end of &#home-banner-3-wrap
+
     .container {
 
       padding-top: 0;
@@ -79,6 +98,11 @@
         padding-bottom: 20px;
       } // end of &#home-banner-2-container
 
+      &#home-banner-3-container {
+        display: flex;
+        padding-bottom: 20px;
+      } // end of &#home-banner-3-container
+
       .content {        
         @include width-2(51%, 58%, 100%);
         padding: 0;
@@ -87,7 +111,12 @@
         flex-direction: column;
         justify-content: center;
 
-        &#home-banner-2-content {          
+        &#home-banner-3-content {
+          @include width-2(55%, 58%, 100%);
+        }
+
+        &#home-banner-2-content,
+        &#home-banner-3-content {          
 
           &, h2, a {
             color: #fff;
@@ -97,7 +126,7 @@
             @include font-size(40px, responsive-size(40px), 20px);
           }
 
-        } // end of &#home-banner-2-content
+        } // end of &#home-banner-2-content        
 
         
         #home-banner-1-img {
@@ -115,17 +144,18 @@
 
           &#home-banner-1-heading {
             @include margin-top(-40px);
-            @include font-size(56px, 28px);          
+            @include font-size(56px, 28px);
+
+            @media (max-width: 767px) {
+              text-shadow: 1px 1px 1px #fff;
+            } // end of @media (max-width: 767px) 
           } // end of  &#home-banner-heading
           
-          &#home-banner-2-heading {
+          &#home-banner-2-heading,
+          &#home-banner-3-heading {
             @include font-size(85px, responsive-size(85px), 50px);
             font-weight: 700;
-          } // end of &#home-banner-2-heading
-
-          @media (max-width: 767px) {
-            text-shadow: 1px 1px 1px #fff;
-          }          
+          } // end of &#home-banner-2-heading                   
 
         } // end of h2
 
@@ -162,7 +192,8 @@
             margin-top: 30px;
           } // end of &#home-banner-1-btn
 
-          &#home-banner-2-btn {
+          &#home-banner-2-btn,
+          &#home-banner-3-btn {
             @include font-size(40px, responsive-size(40px), 16px);            
             border: 2px solid #fff;
             @include padding-vertical(26px);

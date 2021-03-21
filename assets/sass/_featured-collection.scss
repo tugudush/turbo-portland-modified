@@ -1,0 +1,6 @@
+.featured-collection-section {
+  h2.title {
+    @include font-size(48px, responsive-size(48px), 36px);
+    font-weight: 800;
+  } // end of h2.title 
+} // end of .featured-collection-section
