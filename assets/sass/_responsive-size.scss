@@ -28,6 +28,31 @@
 
 } // end of @mixin width
 
+@mixin flex-basis($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex-basis: $tablet-size;
+    @if $important {
+      flex-basis: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+
+  @media (min-width: 1025px) {
+    flex-basis: responsive-size($size, $target-screen-width);
+    @if $important {
+      flex-basis: responsive-size($size, $target-screen-width) !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    flex-basis: $mobile-size;
+    @if $important {
+      flex-basis: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin flex-basis
+
 @mixin width-2($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
 
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -52,6 +77,31 @@
   } // end of @media (max-width: 767px)
 
 } // end of @mixin width-2
+
+@mixin flex-basis-2($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex-basis: $tablet-size;
+    @if $important {
+      flex-basis: $tablet-size !important;
+    }
+  } // end of @media (min-width: 768px) and (max-width: 1024px)
+
+  @media (min-width: 1025px) {
+    flex-basis: $size;
+    @if $important {
+      flex-basis: $size !important;
+    }
+  } // end of @media (min-width: 1025px)  
+  
+  @media (max-width: 767px) {
+    flex-basis: $mobile-size;
+    @if $important {
+      flex-basis: $mobile-size !important;
+    }
+  } // end of @media (max-width: 767px)
+
+} // end of @mixin flex-basis-2
 
 @mixin max-width($size, $tablet-size: $size, $mobile-size: $tablet-size, $target-screen-width: $screen-width-2, $important: false) {
 
