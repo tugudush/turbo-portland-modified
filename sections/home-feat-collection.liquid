@@ -1,0 +1,100 @@
+{% comment %}
+** Home Featured Collection - homepage partial **
+- Draggable section
+- Uses blocks
+{% endcomment %}
+
+<div id="home-feat-collection-wrap" class="wrap">
+
+  <div class="container">
+    
+    <div class="content">      
+
+      <h2>{{ section.settings.heading }}</h2>
+
+      {% assign collection = collections[section.settings.featured_collection] %}
+
+      <div class="feat-collection-row">
+
+        {% for product in collection.products limit: section.settings.display_limit %}
+          <div class="feat-collection-col">
+
+            <a class="product-img-wrap" href="{{ product.url }}">
+              <img class="product-img" src="{{ product.featured_image.src | img_url: '474x' }}">
+            </a><!--/.product-img-wrap-->
+
+            <div class="title-price">
+
+              <a class="product-title" href="{{ product.url }}">
+                <h3>{{ product.title }}</h3>
+              </a><!--/.product-title-link-->
+
+              <a class="product-price" href="{{ product.url }}">{{ product.price | money }}</a>
+
+            </div><!--/.title-price-->
+
+            
+
+            {% comment %}
+            {% for variant in product.variants %}
+             
+              {% case variant.option1 %}
+                {% when 'Small' %}
+                  S
+                {% when 'Medium' %}
+                  M
+                {% when 'Large' %}
+                  L
+                {% when 'XLarge' %}
+                  XL
+                {% when 'XXLarge' %}
+                  XXL
+                {% else %}
+                  {{ variant.option1 }}
+              {% endcase %}
+              
+            {% endfor %}
+            {% endcomment %}
+
+          </div><!--/.feat-collection-col-->
+        {% endfor %}
+        <!-- end of product loop -->
+
+      </div><!--/.feat-collection-row-->
+
+    </div><!--/.content-->
+
+  </div><!--/.container-->
+</div><!--/.wrap-->
+
+{% schema %}
+  {
+    "name": "Home Featured Collection",
+    "class": "home-feat-collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Featured Collection"
+      },
+      {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "display_limit",
+        "label": "Display Limit",
+        "min": 2,
+        "max": 6,
+        "default": 4
+      }
+    ],
+    "presets": [{
+      "name": "Home Featured Collection",
+      "category": "Collection"      
+    }]
+  }
+{% endschema %}

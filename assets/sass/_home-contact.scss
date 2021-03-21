@@ -1,0 +1,10 @@
+.contact-section {
+
+  @include font-size(24px);
+
+  h2 {
+    @include font-size(48px, responsive-size(48px), 36px);
+    font-weight: 800;
+  }
+
+} // end of .contact-section

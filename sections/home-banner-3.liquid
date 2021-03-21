@@ -1,0 +1,64 @@
+{% comment %}
+** Home Banner 3 - homepage partial **
+- Draggable section
+- Uses blocks
+{% endcomment %}
+
+<div id="home-banner-3-wrap" class="wrap" style="background-image:url({{ section.settings.bg-img | img_url: '478x' }})">
+
+  <div id="home-banner-3-container" class="container">
+    
+    <div id="home-banner-3-content" class="content">      
+
+      <h2 id="home-banner-3-heading">{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.txt }}</p>
+      <a id="home-banner-3-btn" class="btn" href="{{ section.settings.btn-url }}">{{ section.settings.btn-txt }}</a>
+
+    </div><!--/.content-->
+
+  </div><!--/.container-->
+</div><!--/.wrap-->
+
+{% schema %}
+  {
+    "name": "Home Banner 3",
+    "class": "home-banner-3 banner",    
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg-color",
+        "label": "Background Color",
+        "default": "#B13A1A"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg-img",
+        "label": "Background Image"
+      },            
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "txt",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "btn-txt",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "btn-url",
+        "label": "Button URL"
+      }
+    ],
+    "presets": [{
+      "name": "Home Banner 3",
+      "category": "Banner"      
+    }]
+  }
+{% endschema %}
