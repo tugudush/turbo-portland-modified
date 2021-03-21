@@ -48,19 +48,22 @@
         {% render 'social-icons' %}
       </div>
     {% endif %}
+
+    {% if contact_logo %}
+      <div class="custom-contact-form__logo">
+        {% render 'image-element',
+                image: contact_logo.src,
+                alt: contact_logo.alt
+        %}
+      </div>
+    {% endif %}
+
   </div>
 </div>
 
 <div class="custom-contact-form {% if contact_text_position == 'left' %}eight offset-by-one{% elsif contact_text_position == 'right' %}eight{% else %}ten offset-by-three{% endif %} columns">
 
-  {% if contact_logo %}
-    <div class="custom-contact-form__logo">
-      {% render 'image-element',
-              image: contact_logo.src,
-              alt: contact_logo.alt
-      %}
-    </div>
-  {% endif %}
+  
 
   {% form 'contact' %}
 
