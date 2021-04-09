@@ -1,1 +1,0 @@
-sass --watch --style=compressed sass/app.scss app.css.liquid

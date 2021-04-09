@@ -189,7 +189,7 @@
             border: 2px solid #000;
             @include padding-vertical(26px);
             @include padding-horizontal(40px);
-            margin-top: 30px;
+            margin-top: 30px;            
           } // end of &#home-banner-1-btn
 
           &#home-banner-2-btn,
@@ -200,6 +200,11 @@
             @include padding-horizontal(40px);
             margin-top: 30px;
           } // end of &#home-banner-2-btn
+
+          &:hover {
+            background-color: #4eb4c6 !important;
+            border-color: #fff;
+          } // end of &:hover
 
         } // end of .btn
 
